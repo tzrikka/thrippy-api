@@ -17,10 +17,13 @@ google-deps: protoc-plugins
 
 .PHONY: go
 go:
-	protoc --proto_path=proto --go_out=go --go-grpc_out=go --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/oauth.proto
-	protoc --proto_path=proto --go_out=go --go-grpc_out=go --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/thrippy.proto
+	rm -rf thrippypb
+	protoc --proto_path=proto --go_out=. --go-grpc_out=. --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/oauth.proto
+	protoc --proto_path=proto --go_out=. --go-grpc_out=. --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/thrippy.proto
+	mv thrippy/ thrippypb/
 
 .PHONY: clean
 clean:
 	rm -rf proto/google
-	rm go/thrippy/v1/*.pb.go
+	rm -rf thrippy
+	rm -rf thrippypb

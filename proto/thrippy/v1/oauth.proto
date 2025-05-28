@@ -5,7 +5,7 @@ package thrippy.v1;
 import "google/api/field_behavior.proto";
 import "google/protobuf/go_features.proto";
 
-option go_package = "github.com/tzrikka/thrippy-api/go/thrippy/v1";
+option go_package = "github.com/tzrikka/thrippy-api/thrippypb/v1";
 option features.(pb.go).api_level = API_OPAQUE;
 
 message OAuthConfig {
