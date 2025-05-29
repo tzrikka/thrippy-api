@@ -1536,7 +1536,7 @@ const file_thrippy_v1_thrippy_proto_rawDesc = "" +
 	"\x11DeleteCredentials\x12$.thrippy.v1.DeleteCredentialsRequest\x1a%.thrippy.v1.DeleteCredentialsResponse\"'\x82\xd3\xe4\x93\x02!*\x1f/v1/links/{link_id}/credentials\x12w\n" +
 	"\vSetMetadata\x12\x1e.thrippy.v1.SetMetadataRequest\x1a\x1f.thrippy.v1.SetMetadataResponse\"'\x82\xd3\xe4\x93\x02!:\x01*\x1a\x1c/v1/links/{link_id}/metadata\x12t\n" +
 	"\vGetMetadata\x12\x1e.thrippy.v1.GetMetadataRequest\x1a\x1f.thrippy.v1.GetMetadataResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/v1/links/{link_id}/metadata\x12}\n" +
-	"\x0eDeleteMetadata\x12!.thrippy.v1.DeleteMetadataRequest\x1a\".thrippy.v1.DeleteMetadataResponse\"$\x82\xd3\xe4\x93\x02\x1e*\x1c/v1/links/{link_id}/metadataB5Z+github.com/tzrikka/thrippy-api/thrippypb/v1\x92\x03\x05\xd2>\x02\x10\x03b\beditionsp\xe8\a"
+	"\x0eDeleteMetadata\x12!.thrippy.v1.DeleteMetadataRequest\x1a\".thrippy.v1.DeleteMetadataResponse\"$\x82\xd3\xe4\x93\x02\x1e*\x1c/v1/links/{link_id}/metadataB3Z)github.com/tzrikka/thrippy-api/thrippy/v1\x92\x03\x05\xd2>\x02\x10\x03b\beditionsp\xe8\a"
 
 var file_thrippy_v1_thrippy_proto_msgTypes = make([]protoimpl.MessageInfo, 22)
 var file_thrippy_v1_thrippy_proto_goTypes = []any{
