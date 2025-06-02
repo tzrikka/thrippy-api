@@ -5,6 +5,7 @@ package thrippy.v1;
 import "google/api/annotations.proto";
 import "google/api/field_behavior.proto";
 import "google/protobuf/go_features.proto";
+import "thrippy/v1/credentials.proto";
 import "thrippy/v1/oauth.proto";
 
 option go_package = "github.com/tzrikka/thrippy-api/thrippy/v1";
@@ -76,7 +77,7 @@ message CreateLinkRequest {
 
 message CreateLinkResponse {
     string link_id = 1;
-    repeated string credential_fields = 2;
+    repeated CredentialField credential_fields = 2;
 }
 
 message GetLinkRequest {
@@ -86,7 +87,7 @@ message GetLinkRequest {
 message GetLinkResponse {
     string template = 1;
     OAuthConfig oauth_config = 2 [lazy = true];
-    repeated string credential_fields = 3;
+    repeated CredentialField credential_fields = 3;
 }
 
 message DeleteLinkRequest {
