@@ -1,4 +1,4 @@
-all: protoc-plugins google-deps go py
+all: protoc-plugins google-deps go python
 
 # https://protobuf.dev/installation/
 # https://grpc.io/docs/languages/go/quickstart/
@@ -26,12 +26,12 @@ go:
 	protoc --proto_path=proto --go_out=. --go-grpc_out=. --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/thrippy.proto
 
 # https://grpc.io/docs/languages/python/quickstart/
-.PHONY: py
-py:
-	$(MAKE) -C py
+.PHONY: python
+python:
+	$(MAKE) -C python
 
 .PHONY: clean
 clean:
 	rm -rf proto/google
-	rm -rf py/src/thrippy/v1
+	rm -rf python/src/thrippy/v1
 	rm -rf thrippy
