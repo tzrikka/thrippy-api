@@ -21,9 +21,9 @@ google-deps: protoc-plugins
 
 .PHONY: go
 go:
-	protoc --proto_path=proto --go_out=go --go-grpc_out=go --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/credentials.proto
-	protoc --proto_path=proto --go_out=go --go-grpc_out=go --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/oauth.proto
-	protoc --proto_path=proto --go_out=go --go-grpc_out=go --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/thrippy.proto
+	protoc --proto_path=proto --go_out=. --go-grpc_out=. --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/credentials.proto
+	protoc --proto_path=proto --go_out=. --go-grpc_out=. --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/oauth.proto
+	protoc --proto_path=proto --go_out=. --go-grpc_out=. --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/thrippy.proto
 
 # https://grpc.io/docs/languages/python/quickstart/
 .PHONY: py
@@ -33,5 +33,5 @@ py:
 .PHONY: clean
 clean:
 	rm -rf proto/google
-	rm -rf go/thrippy
 	rm -rf py/src/thrippy/v1
+	rm -rf thrippy
