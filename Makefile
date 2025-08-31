@@ -1,7 +1,10 @@
-all: protoc-plugins google-deps go
+all: protoc-plugins google-deps go py
 
 # https://protobuf.dev/installation/
 # https://grpc.io/docs/languages/go/quickstart/
+# https://github.com/protocolbuffers/protobuf/releases
+# https://github.com/protocolbuffers/protobuf-go/releases
+# https://pkg.go.dev/google.golang.org/grpc/cmd/protoc-gen-go-grpc?tab=versions
 .PHONY: protoc-plugins
 protoc-plugins:
 	go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
@@ -14,14 +17,21 @@ google-deps: protoc-plugins
 	curl --create-dirs https://raw.githubusercontent.com/googleapis/googleapis/master/google/api/client.proto         -o proto/google/api/client.proto
 	curl --create-dirs https://raw.githubusercontent.com/googleapis/googleapis/master/google/api/field_behavior.proto -o proto/google/api/field_behavior.proto
 	curl --create-dirs https://raw.githubusercontent.com/googleapis/googleapis/master/google/api/http.proto           -o proto/google/api/http.proto
+	curl --create-dirs https://raw.githubusercontent.com/protocolbuffers/protobuf-go/refs/heads/master/src/google/protobuf/go_features.proto -o proto/google/protobuf/go_features.proto
 
 .PHONY: go
 go:
-	protoc --proto_path=proto --go_out=. --go-grpc_out=. --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/credentials.proto
-	protoc --proto_path=proto --go_out=. --go-grpc_out=. --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/oauth.proto
-	protoc --proto_path=proto --go_out=. --go-grpc_out=. --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/thrippy.proto
+	protoc --proto_path=proto --go_out=go --go-grpc_out=go --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/credentials.proto
+	protoc --proto_path=proto --go_out=go --go-grpc_out=go --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/oauth.proto
+	protoc --proto_path=proto --go_out=go --go-grpc_out=go --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/thrippy.proto
+
+# https://grpc.io/docs/languages/python/quickstart/
+.PHONY: py
+py:
+	$(MAKE) -C py
 
 .PHONY: clean
 clean:
 	rm -rf proto/google
-	rm -rf thrippy
+	rm -rf go/thrippy
+	rm -rf py/src/thrippy/v1
