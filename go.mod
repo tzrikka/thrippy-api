@@ -1,6 +1,6 @@
 module github.com/tzrikka/thrippy-api
 
-go 1.25
+go 1.25.1
 
 require (
 	google.golang.org/genproto/googleapis/api v0.0.0-20250826171959-ef028d996bc1
