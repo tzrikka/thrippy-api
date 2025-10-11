@@ -5,7 +5,7 @@ import warnings
 
 from thrippy.v1 import thrippy_pb2 as thrippy_dot_v1_dot_thrippy__pb2
 
-GRPC_GENERATED_VERSION = '1.74.0'
+GRPC_GENERATED_VERSION = '1.75.1'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

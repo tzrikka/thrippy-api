@@ -8,7 +8,7 @@ authors = [
 ]
 requires-python = ">=3.13"
 dependencies = [
-    "grpcio>=1.74.0",
+    "grpcio>=1.75.1",
 ]
 
 [build-system]
@@ -17,5 +17,5 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
-    "grpcio-tools>=1.74.0",
+    "grpcio-tools>=1.75.1",
 ]
