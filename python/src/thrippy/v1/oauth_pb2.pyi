@@ -43,13 +43,22 @@ class OAuthConfig(_message.Message):
     def __init__(self, auth_url: _Optional[str] = ..., token_url: _Optional[str] = ..., auth_style: _Optional[int] = ..., client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., scopes: _Optional[_Iterable[str]] = ..., auth_codes: _Optional[_Mapping[str, str]] = ..., params: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class OAuthToken(_message.Message):
-    __slots__ = ("access_token", "expiry", "refresh_token", "token_type")
+    __slots__ = ("access_token", "expiry", "refresh_token", "token_type", "raw")
+    class RawEntry(_message.Message):
+        __slots__ = ("key", "value")
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     ACCESS_TOKEN_FIELD_NUMBER: _ClassVar[int]
     EXPIRY_FIELD_NUMBER: _ClassVar[int]
     REFRESH_TOKEN_FIELD_NUMBER: _ClassVar[int]
     TOKEN_TYPE_FIELD_NUMBER: _ClassVar[int]
+    RAW_FIELD_NUMBER: _ClassVar[int]
     access_token: str
     expiry: str
     refresh_token: str
     token_type: str
-    def __init__(self, access_token: _Optional[str] = ..., expiry: _Optional[str] = ..., refresh_token: _Optional[str] = ..., token_type: _Optional[str] = ...) -> None: ...
+    raw: _containers.ScalarMap[str, str]
+    def __init__(self, access_token: _Optional[str] = ..., expiry: _Optional[str] = ..., refresh_token: _Optional[str] = ..., token_type: _Optional[str] = ..., raw: _Optional[_Mapping[str, str]] = ...) -> None: ...

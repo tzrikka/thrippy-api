@@ -42,4 +42,5 @@ message OAuthToken {
     string expiry = 2; // RFC-3339: "2006-01-02T15:04:05Z".
     string refresh_token = 3 [json_name = "refresh_token"];
     string token_type = 4 [json_name = "token_type"];
+    map<string, string> raw = 5;
 }
