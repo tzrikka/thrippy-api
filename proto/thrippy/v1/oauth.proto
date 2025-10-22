@@ -34,6 +34,11 @@ message OAuthConfig {
 
     map<string, string> auth_codes = 9 [json_name = "auth_codes"];
     map<string, string> params = 10;
+
+    string nonce = 11 [
+        (google.api.field_behavior) = OUTPUT_ONLY,
+        json_name = "nonce"
+    ];
 }
 
 // Based on https://pkg.go.dev/golang.org/x/oauth2#Token.

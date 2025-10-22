@@ -32,6 +32,7 @@ type OAuthConfig struct {
 	xxx_hidden_Scopes       []string               `protobuf:"bytes,8,rep,name=scopes"`
 	xxx_hidden_AuthCodes    map[string]string      `protobuf:"bytes,9,rep,name=auth_codes" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	xxx_hidden_Params       map[string]string      `protobuf:"bytes,10,rep,name=params" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	xxx_hidden_Nonce        *string                `protobuf:"bytes,11,opt,name=nonce"`
 	XXX_raceDetectHookData  protoimpl.RaceDetectHookData
 	XXX_presence            [1]uint32
 	unknownFields           protoimpl.UnknownFields
@@ -131,29 +132,39 @@ func (x *OAuthConfig) GetParams() map[string]string {
 	return nil
 }
 
+func (x *OAuthConfig) GetNonce() string {
+	if x != nil {
+		if x.xxx_hidden_Nonce != nil {
+			return *x.xxx_hidden_Nonce
+		}
+		return ""
+	}
+	return ""
+}
+
 func (x *OAuthConfig) SetAuthUrl(v string) {
 	x.xxx_hidden_AuthUrl = &v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 0, 8)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 0, 9)
 }
 
 func (x *OAuthConfig) SetTokenUrl(v string) {
 	x.xxx_hidden_TokenUrl = &v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 1, 8)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 1, 9)
 }
 
 func (x *OAuthConfig) SetAuthStyle(v int64) {
 	x.xxx_hidden_AuthStyle = v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 2, 8)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 2, 9)
 }
 
 func (x *OAuthConfig) SetClientId(v string) {
 	x.xxx_hidden_ClientId = &v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 3, 8)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 3, 9)
 }
 
 func (x *OAuthConfig) SetClientSecret(v string) {
 	x.xxx_hidden_ClientSecret = &v
-	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 4, 8)
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 4, 9)
 }
 
 func (x *OAuthConfig) SetScopes(v []string) {
@@ -166,6 +177,11 @@ func (x *OAuthConfig) SetAuthCodes(v map[string]string) {
 
 func (x *OAuthConfig) SetParams(v map[string]string) {
 	x.xxx_hidden_Params = v
+}
+
+func (x *OAuthConfig) SetNonce(v string) {
+	x.xxx_hidden_Nonce = &v
+	protoimpl.X.SetPresent(&(x.XXX_presence[0]), 8, 9)
 }
 
 func (x *OAuthConfig) HasAuthUrl() bool {
@@ -203,6 +219,13 @@ func (x *OAuthConfig) HasClientSecret() bool {
 	return protoimpl.X.Present(&(x.XXX_presence[0]), 4)
 }
 
+func (x *OAuthConfig) HasNonce() bool {
+	if x == nil {
+		return false
+	}
+	return protoimpl.X.Present(&(x.XXX_presence[0]), 8)
+}
+
 func (x *OAuthConfig) ClearAuthUrl() {
 	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 0)
 	x.xxx_hidden_AuthUrl = nil
@@ -228,6 +251,11 @@ func (x *OAuthConfig) ClearClientSecret() {
 	x.xxx_hidden_ClientSecret = nil
 }
 
+func (x *OAuthConfig) ClearNonce() {
+	protoimpl.X.ClearPresent(&(x.XXX_presence[0]), 8)
+	x.xxx_hidden_Nonce = nil
+}
+
 type OAuthConfig_builder struct {
 	_ [0]func() // Prevents comparability and use of unkeyed literals for the builder.
 
@@ -239,6 +267,7 @@ type OAuthConfig_builder struct {
 	Scopes       []string
 	AuthCodes    map[string]string
 	Params       map[string]string
+	Nonce        *string
 }
 
 func (b0 OAuthConfig_builder) Build() *OAuthConfig {
@@ -246,28 +275,32 @@ func (b0 OAuthConfig_builder) Build() *OAuthConfig {
 	b, x := &b0, m0
 	_, _ = b, x
 	if b.AuthUrl != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 0, 8)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 0, 9)
 		x.xxx_hidden_AuthUrl = b.AuthUrl
 	}
 	if b.TokenUrl != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 1, 8)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 1, 9)
 		x.xxx_hidden_TokenUrl = b.TokenUrl
 	}
 	if b.AuthStyle != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 2, 8)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 2, 9)
 		x.xxx_hidden_AuthStyle = *b.AuthStyle
 	}
 	if b.ClientId != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 3, 8)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 3, 9)
 		x.xxx_hidden_ClientId = b.ClientId
 	}
 	if b.ClientSecret != nil {
-		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 4, 8)
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 4, 9)
 		x.xxx_hidden_ClientSecret = b.ClientSecret
 	}
 	x.xxx_hidden_Scopes = b.Scopes
 	x.xxx_hidden_AuthCodes = b.AuthCodes
 	x.xxx_hidden_Params = b.Params
+	if b.Nonce != nil {
+		protoimpl.X.SetPresentNonAtomic(&(x.XXX_presence[0]), 8, 9)
+		x.xxx_hidden_Nonce = b.Nonce
+	}
 	return m0
 }
 
@@ -468,7 +501,7 @@ var File_thrippy_v1_oauth_proto protoreflect.FileDescriptor
 const file_thrippy_v1_oauth_proto_rawDesc = "" +
 	"\n" +
 	"\x16thrippy/v1/oauth.proto\x12\n" +
-	"thrippy.v1\x1a\x1fgoogle/api/field_behavior.proto\x1a!google/protobuf/go_features.proto\"\xe3\x03\n" +
+	"thrippy.v1\x1a\x1fgoogle/api/field_behavior.proto\x1a!google/protobuf/go_features.proto\"\xfe\x03\n" +
 	"\vOAuthConfig\x12!\n" +
 	"\bauth_url\x18\x01 \x01(\tB\x03\xe0A\x02R\n" +
 	"access_url\x12!\n" +
@@ -483,7 +516,8 @@ const file_thrippy_v1_oauth_proto_rawDesc = "" +
 	"auth_codes\x18\t \x03(\v2&.thrippy.v1.OAuthConfig.AuthCodesEntryR\n" +
 	"auth_codes\x12;\n" +
 	"\x06params\x18\n" +
-	" \x03(\v2#.thrippy.v1.OAuthConfig.ParamsEntryR\x06params\x1a<\n" +
+	" \x03(\v2#.thrippy.v1.OAuthConfig.ParamsEntryR\x06params\x12\x19\n" +
+	"\x05nonce\x18\v \x01(\tB\x03\xe0A\x03R\x05nonce\x1a<\n" +
 	"\x0eAuthCodesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\x1a9\n" +

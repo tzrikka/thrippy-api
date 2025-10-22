@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class OAuthConfig(_message.Message):
-    __slots__ = ("auth_url", "token_url", "auth_style", "client_id", "client_secret", "scopes", "auth_codes", "params")
+    __slots__ = ("auth_url", "token_url", "auth_style", "client_id", "client_secret", "scopes", "auth_codes", "params", "nonce")
     class AuthCodesEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -32,6 +32,7 @@ class OAuthConfig(_message.Message):
     SCOPES_FIELD_NUMBER: _ClassVar[int]
     AUTH_CODES_FIELD_NUMBER: _ClassVar[int]
     PARAMS_FIELD_NUMBER: _ClassVar[int]
+    NONCE_FIELD_NUMBER: _ClassVar[int]
     auth_url: str
     token_url: str
     auth_style: int
@@ -40,7 +41,8 @@ class OAuthConfig(_message.Message):
     scopes: _containers.RepeatedScalarFieldContainer[str]
     auth_codes: _containers.ScalarMap[str, str]
     params: _containers.ScalarMap[str, str]
-    def __init__(self, auth_url: _Optional[str] = ..., token_url: _Optional[str] = ..., auth_style: _Optional[int] = ..., client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., scopes: _Optional[_Iterable[str]] = ..., auth_codes: _Optional[_Mapping[str, str]] = ..., params: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    nonce: str
+    def __init__(self, auth_url: _Optional[str] = ..., token_url: _Optional[str] = ..., auth_style: _Optional[int] = ..., client_id: _Optional[str] = ..., client_secret: _Optional[str] = ..., scopes: _Optional[_Iterable[str]] = ..., auth_codes: _Optional[_Mapping[str, str]] = ..., params: _Optional[_Mapping[str, str]] = ..., nonce: _Optional[str] = ...) -> None: ...
 
 class OAuthToken(_message.Message):
     __slots__ = ("access_token", "expiry", "refresh_token", "token_type", "raw")

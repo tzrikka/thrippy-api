@@ -26,7 +26,7 @@ from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior_
 from google.protobuf import go_features_pb2 as google_dot_protobuf_dot_go__features__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16thrippy/v1/oauth.proto\x12\nthrippy.v1\x1a\x1fgoogle/api/field_behavior.proto\x1a!google/protobuf/go_features.proto\"\xbb\x03\n\x0bOAuthConfig\x12!\n\x08\x61uth_url\x18\x01 \x01(\tB\x03\xe0\x41\x02R\naccess_url\x12!\n\ttoken_url\x18\x03 \x01(\tB\x03\xe0\x41\x02R\ttoken_url\x12\x1e\n\nauth_style\x18\x04 \x01(\x03R\nauth_style\x12!\n\tclient_id\x18\x05 \x01(\tB\x03\xe0\x41\x02R\tclient_id\x12)\n\rclient_secret\x18\x06 \x01(\tB\x03\xe0\x41\x02R\rclient_secret\x12\x0e\n\x06scopes\x18\x08 \x03(\t\x12\x46\n\nauth_codes\x18\t \x03(\x0b\x32&.thrippy.v1.OAuthConfig.AuthCodesEntryR\nauth_codes\x12\x33\n\x06params\x18\n \x03(\x0b\x32#.thrippy.v1.OAuthConfig.ParamsEntry\x1a\x30\n\x0e\x41uthCodesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a-\n\x0bParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x02\x10\x03J\x04\x08\x07\x10\x08\"\xe0\x01\n\nOAuthToken\x12\"\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\tR\x0c\x61\x63\x63\x65ss_token\x12\x0e\n\x06\x65xpiry\x18\x02 \x01(\t\x12$\n\rrefresh_token\x18\x03 \x01(\tR\rrefresh_token\x12\x1e\n\ntoken_type\x18\x04 \x01(\tR\ntoken_type\x12,\n\x03raw\x18\x05 \x03(\x0b\x32\x1f.thrippy.v1.OAuthToken.RawEntry\x1a*\n\x08RawEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x33Z)github.com/tzrikka/thrippy-api/thrippy/v1\x92\x03\x05\xd2>\x02\x10\x03\x62\x08\x65\x64itionsp\xe8\x07')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16thrippy/v1/oauth.proto\x12\nthrippy.v1\x1a\x1fgoogle/api/field_behavior.proto\x1a!google/protobuf/go_features.proto\"\xd6\x03\n\x0bOAuthConfig\x12!\n\x08\x61uth_url\x18\x01 \x01(\tB\x03\xe0\x41\x02R\naccess_url\x12!\n\ttoken_url\x18\x03 \x01(\tB\x03\xe0\x41\x02R\ttoken_url\x12\x1e\n\nauth_style\x18\x04 \x01(\x03R\nauth_style\x12!\n\tclient_id\x18\x05 \x01(\tB\x03\xe0\x41\x02R\tclient_id\x12)\n\rclient_secret\x18\x06 \x01(\tB\x03\xe0\x41\x02R\rclient_secret\x12\x0e\n\x06scopes\x18\x08 \x03(\t\x12\x46\n\nauth_codes\x18\t \x03(\x0b\x32&.thrippy.v1.OAuthConfig.AuthCodesEntryR\nauth_codes\x12\x33\n\x06params\x18\n \x03(\x0b\x32#.thrippy.v1.OAuthConfig.ParamsEntry\x12\x19\n\x05nonce\x18\x0b \x01(\tB\x03\xe0\x41\x03R\x05nonce\x1a\x30\n\x0e\x41uthCodesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a-\n\x0bParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x02\x10\x03J\x04\x08\x07\x10\x08\"\xe0\x01\n\nOAuthToken\x12\"\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\tR\x0c\x61\x63\x63\x65ss_token\x12\x0e\n\x06\x65xpiry\x18\x02 \x01(\t\x12$\n\rrefresh_token\x18\x03 \x01(\tR\rrefresh_token\x12\x1e\n\ntoken_type\x18\x04 \x01(\tR\ntoken_type\x12,\n\x03raw\x18\x05 \x03(\x0b\x32\x1f.thrippy.v1.OAuthToken.RawEntry\x1a*\n\x08RawEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x33Z)github.com/tzrikka/thrippy-api/thrippy/v1\x92\x03\x05\xd2>\x02\x10\x03\x62\x08\x65\x64itionsp\xe8\x07')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -46,16 +46,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_OAUTHCONFIG'].fields_by_name['client_id']._serialized_options = b'\340A\002'
   _globals['_OAUTHCONFIG'].fields_by_name['client_secret']._loaded_options = None
   _globals['_OAUTHCONFIG'].fields_by_name['client_secret']._serialized_options = b'\340A\002'
+  _globals['_OAUTHCONFIG'].fields_by_name['nonce']._loaded_options = None
+  _globals['_OAUTHCONFIG'].fields_by_name['nonce']._serialized_options = b'\340A\003'
   _globals['_OAUTHTOKEN_RAWENTRY']._loaded_options = None
   _globals['_OAUTHTOKEN_RAWENTRY']._serialized_options = b'8\001'
   _globals['_OAUTHCONFIG']._serialized_start=107
-  _globals['_OAUTHCONFIG']._serialized_end=550
-  _globals['_OAUTHCONFIG_AUTHCODESENTRY']._serialized_start=443
-  _globals['_OAUTHCONFIG_AUTHCODESENTRY']._serialized_end=491
-  _globals['_OAUTHCONFIG_PARAMSENTRY']._serialized_start=493
-  _globals['_OAUTHCONFIG_PARAMSENTRY']._serialized_end=538
-  _globals['_OAUTHTOKEN']._serialized_start=553
-  _globals['_OAUTHTOKEN']._serialized_end=777
-  _globals['_OAUTHTOKEN_RAWENTRY']._serialized_start=735
-  _globals['_OAUTHTOKEN_RAWENTRY']._serialized_end=777
+  _globals['_OAUTHCONFIG']._serialized_end=577
+  _globals['_OAUTHCONFIG_AUTHCODESENTRY']._serialized_start=470
+  _globals['_OAUTHCONFIG_AUTHCODESENTRY']._serialized_end=518
+  _globals['_OAUTHCONFIG_PARAMSENTRY']._serialized_start=520
+  _globals['_OAUTHCONFIG_PARAMSENTRY']._serialized_end=565
+  _globals['_OAUTHTOKEN']._serialized_start=580
+  _globals['_OAUTHTOKEN']._serialized_end=804
+  _globals['_OAUTHTOKEN_RAWENTRY']._serialized_start=762
+  _globals['_OAUTHTOKEN_RAWENTRY']._serialized_end=804
 # @@protoc_insertion_point(module_scope)
