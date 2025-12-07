@@ -17,7 +17,6 @@ google-deps: protoc-plugins
 	curl --create-dirs https://raw.githubusercontent.com/googleapis/googleapis/master/google/api/client.proto         -o proto/google/api/client.proto
 	curl --create-dirs https://raw.githubusercontent.com/googleapis/googleapis/master/google/api/field_behavior.proto -o proto/google/api/field_behavior.proto
 	curl --create-dirs https://raw.githubusercontent.com/googleapis/googleapis/master/google/api/http.proto           -o proto/google/api/http.proto
-	curl --create-dirs https://raw.githubusercontent.com/protocolbuffers/protobuf-go/refs/heads/master/src/google/protobuf/go_features.proto -o proto/google/protobuf/go_features.proto
 
 .PHONY: go
 go:
