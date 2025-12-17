@@ -1,6 +1,7 @@
 all: py
 
 # https://grpc.io/docs/languages/python/quickstart/
+# https://pypi.org/project/grpcio/
 .PHONY: py
 py:
 	uv sync --active
