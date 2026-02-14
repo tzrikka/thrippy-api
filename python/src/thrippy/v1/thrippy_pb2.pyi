@@ -1,6 +1,5 @@
 from google.api import annotations_pb2 as _annotations_pb2
 from google.api import field_behavior_pb2 as _field_behavior_pb2
-from google.protobuf import go_features_pb2 as _go_features_pb2
 from thrippy.v1 import credentials_pb2 as _credentials_pb2
 from thrippy.v1 import oauth_pb2 as _oauth_pb2
 from google.protobuf.internal import containers as _containers
@@ -49,7 +48,7 @@ class DeleteLinkRequest(_message.Message):
     ALLOW_MISSING_FIELD_NUMBER: _ClassVar[int]
     link_id: str
     allow_missing: bool
-    def __init__(self, link_id: _Optional[str] = ..., allow_missing: bool = ...) -> None: ...
+    def __init__(self, link_id: _Optional[str] = ..., allow_missing: _Optional[bool] = ...) -> None: ...
 
 class DeleteLinkResponse(_message.Message):
     __slots__ = ()
@@ -101,7 +100,7 @@ class DeleteCredentialsRequest(_message.Message):
     ALLOW_MISSING_FIELD_NUMBER: _ClassVar[int]
     link_id: str
     allow_missing: bool
-    def __init__(self, link_id: _Optional[str] = ..., allow_missing: bool = ...) -> None: ...
+    def __init__(self, link_id: _Optional[str] = ..., allow_missing: _Optional[bool] = ...) -> None: ...
 
 class DeleteCredentialsResponse(_message.Message):
     __slots__ = ()
@@ -151,7 +150,7 @@ class DeleteMetadataRequest(_message.Message):
     ALLOW_MISSING_FIELD_NUMBER: _ClassVar[int]
     link_id: str
     allow_missing: bool
-    def __init__(self, link_id: _Optional[str] = ..., allow_missing: bool = ...) -> None: ...
+    def __init__(self, link_id: _Optional[str] = ..., allow_missing: _Optional[bool] = ...) -> None: ...
 
 class DeleteMetadataResponse(_message.Message):
     __slots__ = ()

@@ -1,5 +1,4 @@
 from google.api import field_behavior_pb2 as _field_behavior_pb2
-from google.protobuf import go_features_pb2 as _go_features_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -20,4 +19,4 @@ class CredentialField(_message.Message):
     links: _containers.RepeatedScalarFieldContainer[str]
     manual: bool
     optional: bool
-    def __init__(self, name: _Optional[str] = ..., description: _Optional[str] = ..., links: _Optional[_Iterable[str]] = ..., manual: bool = ..., optional: bool = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., description: _Optional[str] = ..., links: _Optional[_Iterable[str]] = ..., manual: _Optional[bool] = ..., optional: _Optional[bool] = ...) -> None: ...
