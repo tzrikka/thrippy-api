@@ -24,7 +24,6 @@ go:
 	protoc --proto_path=proto --go_out=. --go-grpc_out=. --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/oauth.proto
 	protoc --proto_path=proto --go_out=. --go-grpc_out=. --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative thrippy/v1/thrippy.proto
 
-# https://grpc.io/docs/languages/python/quickstart/
 .PHONY: python
 python:
 	$(MAKE) -C python
