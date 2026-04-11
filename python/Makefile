@@ -2,6 +2,8 @@ all: py
 
 # https://grpc.io/docs/languages/python/quickstart/
 # https://pypi.org/project/grpcio/
+# https://pypi.org/project/protobuf/
+# https://pypi.org/project/googleapis-common-protos/
 .PHONY: py
 py:
 	protoc --proto_path=../proto --python_out=src --pyi_out=src ../proto/thrippy/v1/credentials.proto
